@@ -3,7 +3,6 @@
 Listing_AEBODSYS_data <- ADAE_original |>
   left_join(ADSL_original |> select(USUBJID, SAFFL), by = "USUBJID") |>
   filter(SAFFL == "Y") |>
-  select(USUBJID, AEBODSYS) |>
   group_by(USUBJID) |>
   unique() |>
   mutate(
