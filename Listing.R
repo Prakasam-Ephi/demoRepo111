@@ -7,7 +7,7 @@ Listing_AEBODSYS_data <- ADAE_original |>
   group_by(USUBJID) |>
   unique() |>
   mutate(
-    AEDECOD=AEBODSYS,
+    AEDECOD=AEDECOD,
     ID_var=1
   ) |>
   ungroup()
