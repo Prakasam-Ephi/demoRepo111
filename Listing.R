@@ -29,24 +29,8 @@ Listing_data <- ADAE_original |>
   convert_na_to_blanks()
 
 
-# Table appearance
 
-Listing_data |>
-  mutate(USUBJID=gsub("_"," ",USUBJID)) |>
-  rtf_page(orientation = "landscape") |>
-  rtf_colheader(
-    colheader = " Unique Subject Identifier | System Organ Class/Preffered Term | Severity/Intensity | Start Date/Time of Adverse Event | End Date/Time of Adverse Event | Study Day of Start of Adverse Event | Study Day of End of Adverse Event",
-    col_rel_width = c(rep(6,2),rep(3,3),rep(2,2))
-  ) |>
-  rtf_body(
-    border_top = rep("single",7),
-    border_bottom = rep("single",7),
-    group_by = c("USUBJID","AEDECOD"),
-    col_rel_width=c(rep(6,2),rep(3,3),rep(2,2)),
-    text_justification = c(rep("l",2),rep("c",5))
-  ) |>
-  rtf_encode() |>
-  write_rtf("listing.rtf")
+
 
 
 
